@@ -1,0 +1,27 @@
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-left: 1rem;
+}
+
+.header-wrapper {
+    background-color: #1F2326;
+    height: 60px;
+    display: flex;
+}
+
+.riotGames {
+    width: 30px;
+}
+ ul li {
+    list-style: none;
+ }
+ ul li:hover {
+    cursor: pointer;
+ }
+ul {
+    display: flex;
+    gap: 3rem;
+    color: white;
+}
