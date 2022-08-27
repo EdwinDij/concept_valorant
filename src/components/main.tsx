@@ -14,41 +14,21 @@ const [champions, setChampions] = useState<any>([])
                 .then(res => {
                     //console.log(res.data)
                     const champ = res.data.data
-                    const results = Object.entries(champ)
-                    console.log(results)
-                    setChampions(results)
-                    console.log(champions)
-                    for (const element of results) {
-                        element.shift()
-                        console.log(element)
-                    }
+                    //const results:any = Object.entries(champ)
+                    setChampions(champ)
+                    //console.log(champions)
+                
                 })
         }
         getAgent()
     }, [])
 
-
+const results:any = Object.entries(champions)
+console.log(results)
 
     return (
         <div className='main'>
-            <div className="main-wrapper">
-                <div className="vertical-text">
-                    <p className='agents'>Agents</p>
-                </div>
 
-                    {champions.map ((championslol:any, key:any) => {
-                        return <div className="card-agents">
-                        <div className="card-agents-text">
-                            <p className='card-agents-text-city'>United Kingdom</p>
-                            <p className='card-agents-text-name'>{championslol.name} </p>
-                        </div>
-                        <div className="card-agents-wrapper">
-                            <img className='card-agents-image' src={championslol.assetName} alt="phoenix" />
-                        </div>
-                    </div>
-                    })}
-                    
-            </div>
         </div>
 
     )
