@@ -1,0 +1,21 @@
+.main{
+    margin-top: 3rem;
+}
+
+.main-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.vertical-text {
+    font-family: druk-wide;
+    text-transform: uppercase;
+    writing-mode: vertical-lr;
+    text-align: end;
+    margin: 0;
+}
+
+.card-agents-image {
+    height: 445px;
+}

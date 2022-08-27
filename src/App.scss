@@ -1,4 +1,7 @@
+@import url(//db.onlinewebfonts.com/c/2206d6cc490084998d531e8c1b2cbb4a?family=Druk+Wide+Bold);
 @import '../src/header.scss';
+@import '../src/main.scss';
+
 * {
   color: white;
 }
@@ -6,7 +9,18 @@
   text-align: center;
 }
 
+P {
+  margin: 0;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+
+.background {
+  max-width: 100%;
+  opacity: .5;
+  position: relative;
 }

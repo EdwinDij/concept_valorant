@@ -1,6 +1,7 @@
 import React from 'react'
 import logoRiot from './assets/logoRiot.png';
-import logoValorant from './assets/icons8-valorant-50.png';
+import logoValorant from './assets/logoValorant.png';
+import bar from './assets/Rectangle 128bar.png';
 
 export default function header() {
   return (
@@ -8,6 +9,7 @@ export default function header() {
         <div className="header-wrapper">
             <div className="header-logo">
                 <img src={logoRiot} alt="logoRiot" className='riotGames'/>
+                <img src={bar} alt="bar" className='bar'/>
                 <img src={logoValorant} alt="logoValorant" className='valorant riotGames'/>
             </div>
             <nav className='header-nav'>
