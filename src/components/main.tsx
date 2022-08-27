@@ -14,14 +14,20 @@ const [champions, setChampions] = useState<any>([])
                 .then(res => {
                     //console.log(res.data)
                     const champ = res.data.data
-                    const results = Object.keys(champ).map((key) =>[champ[key]])
+                    const results = Object.entries(champ)
                     console.log(results)
-                    console.log(results[0])
-
+                    setChampions(results)
+                    console.log(champions)
+                    for (const element of results) {
+                        element.shift()
+                        console.log(element)
+                    }
                 })
         }
         getAgent()
     }, [])
+
+
 
     return (
         <div className='main'>
