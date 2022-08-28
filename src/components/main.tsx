@@ -1,42 +1,47 @@
 import React, { useEffect, useState } from 'react'
-import phoenix from './assets/Phoenix.png'
-import jett from './assets/Jett.png'
-import sova from './assets/Sova.png'
-import sage from './assets/Sage.png'
 import axios from 'axios'
 
 export default function Main() {
 const [champions, setChampions] = useState<any>([])
 const [champData, setChampData] = useState<any>([])
+const [champId, setChampId] = useState<any>([])
+
     useEffect(() => {
         const getAgent = () => {
             axios.get(`http://ddragon.leagueoflegends.com/cdn/12.16.1/data/fr_FR/champion.json`)
                 .then(res => {
-                    //console.log(res.data)
                     const champ = res.data.data
+                    console.log(champ)
                     const results:any = Object.entries(champ)
-                    //console.log(results)
                     setChampData(results)
-                    console.log(results)
                 })
         }
         getAgent()
     }, [])
 
-let champDataMap = new Map(champData)
 
+let champDataMap:any = new Map(champData)
+//console.log(champDataMap[0].key)
 let champDataMapKeys:any = champDataMap.keys()
+//console.log(champDataMapKeys.value)
 let champDataMapValues:any = champDataMap.values()
-let champDataMap_array:any = [...champDataMapValues,]
-console.log(champDataMap_array)
+//console.log(champDataMapValues)
+let champDataMap_array:any = [...champDataMapValues]
+//console.log(champDataMap_array)
 
-    return (
+const urlImg:any = 'http://ddragon.leagueoflegends.com/cdn/img/champion/loading/'
+
+
+return (
         <div className='main'>
+            <div className="container-card">
             {champDataMap_array.map((lolChamp:any, key:string) => {
-                return <div>
-                    <h2>{lolChamp.name}</h2>
+                return <div className='card' key={lolChamp.id}>
+                    <img className="card-img"src={urlImg + lolChamp.id + '_0.jpg'} alt="" />
+                    <p className='champ-name'>{lolChamp.name}</p>
                 </div>
             })}
+            </div>
         </div>
 
     )
