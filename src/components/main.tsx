@@ -17,6 +17,7 @@ const [champData, setChampData] = useState<any>([])
                     const results:any = Object.entries(champ)
                     //console.log(results)
                     setChampData(results)
+                    console.log(results)
                 })
         }
         getAgent()
@@ -26,12 +27,16 @@ let champDataMap = new Map(champData)
 
 let champDataMapKeys:any = champDataMap.keys()
 let champDataMapValues:any = champDataMap.values()
-let champDataMap_array = [...champDataMapValues,]
+let champDataMap_array:any = [...champDataMapValues,]
 console.log(champDataMap_array)
 
     return (
         <div className='main'>
-
+            {champDataMap_array.map((lolChamp:any, key:string) => {
+                return <div>
+                    <h2>{lolChamp.name}</h2>
+                </div>
+            })}
         </div>
 
     )
