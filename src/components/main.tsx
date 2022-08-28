@@ -7,24 +7,27 @@ import axios from 'axios'
 
 export default function Main() {
 const [champions, setChampions] = useState<any>([])
-
+const [champData, setChampData] = useState<any>([])
     useEffect(() => {
         const getAgent = () => {
             axios.get(`http://ddragon.leagueoflegends.com/cdn/12.16.1/data/fr_FR/champion.json`)
                 .then(res => {
                     //console.log(res.data)
                     const champ = res.data.data
-                    //const results:any = Object.entries(champ)
-                    setChampions(champ)
-                    //console.log(champions)
-                
+                    const results:any = Object.entries(champ)
+                    //console.log(results)
+                    setChampData(results)
                 })
         }
         getAgent()
     }, [])
 
-const results:any = Object.entries(champions)
-console.log(results)
+let champDataMap = new Map(champData)
+
+let champDataMapKeys:any = champDataMap.keys()
+let champDataMapValues:any = champDataMap.values()
+let champDataMap_array = [...champDataMapValues,]
+console.log(champDataMap_array)
 
     return (
         <div className='main'>
